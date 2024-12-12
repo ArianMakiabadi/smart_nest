@@ -1,3 +1,6 @@
+/*Google Fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 /*Reset*/
 *,
 * ::before,
@@ -10,6 +13,7 @@
 
 /*Root variables*/
 :root {
+  /*? Layout colors*/
   --color-primary: #80b3ff;
   --color-secondary-dark: #98e4ff;
   --color-secondary-light: #b6fffa;
@@ -17,6 +21,19 @@
   --color-heading: #000;
   --color-body: #333333;
   --color-white: #fff;
+  /*? Button colors*/
+  --button-gradient-color: linear-gradient(
+    90deg,
+    hsl(48, 100%, 50%) 0%,
+    hsl(28, 100%, 54%, 100%)
+  );
+  --black-color: hsl(225, 15%, 6%);
+  --reflection-color: hsl(48, 30%, 95%, 0.3);
+
+  /*Font and Typography*/
+  --body-font: "Montserrat", sans-serif;
+  --normal-font-size: 1.4rem;
+  /*? Others*/
   --avatar-size: 50px;
 }
 
@@ -24,13 +41,13 @@
 html {
   font-size: 62.5%;
   overflow-x: hidden;
-  /* font-family: sans-serif; */
 }
 
 body {
   color: var(--color-body);
   font-size: 1.4rem;
   overflow-x: hidden; /*x Prevent horizontal scrolling */
+  font-family: var(--body-font);
 }
 
 a {
@@ -51,7 +68,7 @@ h3 {
   width: 100%;
 }
 
-/*Navbar*/
+/**===============Navbar===============*/
 
 .main-header {
   background-color: var(--color-navbar);
@@ -172,41 +189,195 @@ nav.nav__expanded .nav__list {
   margin: 8px 0;
 }
 
-/*Buttons*/
+/**============Buttons================*/
 
-.btn {
-  cursor: pointer;
-  border: 0;
-  outline: 0;
-  padding: 2rem 2.5rem;
-  border-radius: 8px;
-  margin: 1rem 0;
-  text-align: center;
-  white-space: nowrap;
-  font-size: 1.4rem;
+.button__container {
+  height: 100vh;
+  margin-inline: 1.5rem;
+  display: grid;
+  place-items: center;
 }
 
-.btn--primary {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+.button {
+  position: relative;
+  transition: transform 0.4s;
 }
 
-.btn--secondary {
-  background-color: var(--color-secondary-dark);
-  color: var(--color-white);
+.button__content {
+  position: relative;
+  background: var(--button-gradient-color);
+  padding: 1.25rem 3rem;
+  border-radius: 3rem;
+  border: 3px solid black;
+  color: black;
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  overflow: hidden;
 }
 
-.btn--block {
+.button__text {
+  font-weight: 700;
+}
+
+.button__icon {
+  font-size: 1.5rem;
+}
+
+.button__text,
+.button__icon {
+  position: relative;
+  z-index: 2;
+}
+
+/* button reflections*/
+.button__reflection-1,
+.button__reflection-2 {
+  width: 8px;
+  height: 120px;
+  background-color: var(--reflection-color);
+  rotate: 30deg;
+  position: absolute;
+  inset: 0;
+  top: 0;
+  left: -180%;
+  margin: auto;
+  transition: left 0.6s cubic-bezier(0.2, 0.5, 0.2, 1.2);
+}
+
+.button__reflection-1::after {
+  content: "";
+  width: 15px;
+  height: 100%;
+  background-color: var(--reflection-color);
+  position: absolute;
+  top: -1rem;
+  left: 1.8rem;
+}
+
+.button__reflection-2::after {
+  content: "";
+  width: 35px;
+  height: 100%;
+  background-color: var(--reflection-color);
+  position: absolute;
+  top: -1rem;
+  left: 1.25rem;
+}
+
+/*button moving shapes*/
+.button img {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.button__star-1 {
+  width: 20px;
+  top: -30%;
+  left: -16%;
+  transform: rotate(48deg) scale(0.1);
+}
+
+.button__star-2 {
+  width: 40px;
+  top: -20%;
+  right: -13%;
+  transform: rotate(-48deg) scale(0.1);
+}
+
+.button__circle-1,
+.button__circle-2 {
+  width: 6px;
+}
+
+.button__circle-1 {
+  top: -10%;
+  left: 28%;
+  transform: scale(0.1);
+}
+
+.button__circle-2 {
+  bottom: -15%;
+  right: 20%;
+  transform: scale(0.1);
+}
+
+.button__diamond {
+  width: 18px;
+  top: -38%;
+  left: 62%;
+  transform: scale(0.1);
+}
+
+.button__triangle {
+  width: 30px;
+  left: 8%;
+  bottom: -40%;
+  transform: rotate(-48deg) scale(0.1);
+}
+
+/*button gredient shadow*/
+.button__shadow {
   width: 100%;
-  font-size: 1.6rem;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: var(--button-gradient-color);
+  padding: 1.25rem 3rem;
+  border-radius: 3rem;
+  border: 3px solid black;
+  z-index: -1;
+  transition: transform 0.3s;
 }
 
-@media screen and (min-width: 1024px) {
-  .btn {
-    font-size: 1.6rem;
-  }
+/*view shadow gredient*/
+.button:hover .button__shadow {
+  transform: translate(-0.75rem, 0.75rem);
+}
 
-  main .btn--block {
-    font-size: 2rem;
-  }
+/*move reflection*/
+.button:hover .button__reflection-1 {
+  left: 120%;
+}
+
+.button:hover .button__reflection-2 {
+  left: -70%;
+}
+
+/*view moving shapes*/
+.button:hover {
+  transform: rotate(-4deg) scale(1.1);
+}
+
+.button:hover img {
+  opacity: 1;
+}
+
+.button:hover .button__star-1 {
+  transform: scale(1.1);
+  transition-delay: 0.1s;
+}
+
+.button:hover .button__star-2 {
+  transform: scale(1.1);
+}
+
+.button:hover .button__circle-1 {
+  transform: translateY(-8px) scale(1.1);
+  transition-delay: 0.1s;
+}
+
+.button:hover .button__circle-2 {
+  transform: translate(-20px, 20px) scale(1.1);
+}
+
+.button:hover .button__diamond {
+  transform: translateY(7px) rotate(-24deg) scale(1.1);
+}
+
+.button:hover .button__triangle {
+  transform: rotate(-12deg) scale(1.1);
 }
