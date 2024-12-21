@@ -70,7 +70,7 @@ h1,
 h2,
 h3 {
   color: var(--color-white);
-  font-weight: bold;
+  font-weight: 700;
 }
 
 p {
@@ -466,7 +466,6 @@ nav.nav__expanded .nav__list {
 }
 
 .hero h1 {
-  font-weight: 700;
   font-size: 3.2rem;
   margin-bottom: 2rem;
 }
@@ -510,6 +509,7 @@ nav.nav__expanded .nav__list {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  margin-top: 3rem;
 }
 
 .icon__section .icon__section-icon {
@@ -552,4 +552,33 @@ nav.nav__expanded .nav__list {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 1fr;
   }
+}
+
+/**=============== device Section==============*/
+
+.device {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  gap: 2rem;
+}
+
+.device__img {
+  width: 316px;
+}
+.device__text {
+  margin: 0 2rem;
+}
+.device__title {
+  font-size: 3.2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.device__details {
+  font-size: 1.8rem;
+  font-weight: 500;
 }
