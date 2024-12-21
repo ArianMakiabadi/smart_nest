@@ -458,7 +458,7 @@ nav.nav__expanded .nav__list {
 
 .hero__img-container img {
   width: 279.65px;
-  height: auto;
+  height: 333.07px;
 }
 
 .hero__text {
@@ -475,10 +475,17 @@ nav.nav__expanded .nav__list {
   font-size: 1.8rem;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .hero {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .hero__text {
+    align-content: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   .hero h1 {
     font-size: 9rem;
     margin-top: 9rem;
