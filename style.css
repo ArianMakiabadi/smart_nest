@@ -69,8 +69,12 @@ a {
 h1,
 h2,
 h3 {
-  color: var(--color-primary);
+  color: var(--color-white);
   font-weight: bold;
+}
+
+p {
+  color: var(--color-white);
 }
 
 .container {
@@ -202,10 +206,12 @@ nav.nav__expanded .nav__list {
 /*? 3D buttons*/
 
 .button__container {
-  height: 100%;
   margin-inline: 1.5rem;
   display: grid;
-  place-items: center;
+  /* place-items: center; */
+  justify-content: start;
+  margin-left: -0.5rem;
+  margin-top: 2rem;
 }
 
 .button {
@@ -432,3 +438,58 @@ nav.nav__expanded .nav__list {
 }
 
 /**=============== Hero Section==============*/
+
+.hero {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  margin-top: 3rem;
+  position: relative;
+  width: 100%;
+  height: 478px;
+}
+
+.hero__img-container {
+  object-fit: fill;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.hero__img-container img {
+  width: 279.65px;
+  height: auto;
+}
+
+.hero__text {
+  margin: 0 2rem;
+}
+
+.hero h1 {
+  font-weight: 700;
+  font-size: 3.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero p {
+  font-size: 1.8rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .hero {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero h1 {
+    font-size: 9rem;
+    margin-top: 9rem;
+  }
+
+  .hero p {
+    font-size: 3.4rem;
+  }
+
+  .hero__img-container img {
+    width: 500px;
+    height: auto;
+  }
+}
