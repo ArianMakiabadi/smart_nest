@@ -500,3 +500,37 @@ nav.nav__expanded .nav__list {
     height: auto;
   }
 }
+
+/**=============== icon Section==============*/
+
+.icon__section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon__section .icon__section-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon__section-icon img {
+  width: 120px;
+  height: 120px;
+}
+
+.icon__section-text {
+  margin-top: -2rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .icon__section {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+  }
+}
