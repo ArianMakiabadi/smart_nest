@@ -15,14 +15,14 @@
 :root {
   /*? Layout colors*/
   --color-bg: linear-gradient(
-    to left,
+    to right,
     hsla(194, 86%, 46%, 1) 0%,
     hsla(194, 100%, 79%, 1) 100%
   );
-  --color-primary: #80b3ff;
+  --color-primary: hsla(198, 80%, 28%, 1);
   --color-secondary-dark: #98e4ff;
   --color-secondary-light: #b6fffa;
-  --color-navbar: #687eff;
+  /* --color-navbar: #687eff; */
   --color-heading: #000;
   --color-body: #333333;
   --color-white: #fff;
@@ -59,6 +59,7 @@ body {
   overflow-x: hidden; /*x Prevent horizontal scrolling */
   font-family: var(--body-font);
   background-image: var(--color-bg);
+  height: 100vh;
 }
 
 a {
@@ -80,10 +81,6 @@ h3 {
 }
 
 /**===============Navbar===============*/
-
-.main-header {
-  background-color: var(--color-navbar);
-}
 
 .nav {
   display: flex;
@@ -415,8 +412,8 @@ nav.nav__expanded .nav__list {
 }
 
 .btn--secondary {
-  background-color: var(--color-secondary-dark);
   color: var(--color-white);
+  border: solid 1px white;
 }
 
 .btn--block {
