@@ -528,6 +528,25 @@ nav.nav__expanded .nav__list {
   margin-top: -2rem;
 }
 
+.adjust-icon {
+  /*due to faulthy image (uneven transparent spaces)*/
+  margin-left: 1rem;
+}
+
+@media screen and (max-width: 400px) {
+  .icon__section {
+    gap: 0;
+  }
+  .icon__section-icon p {
+    font-size: 1rem;
+  }
+
+  .icon__section-icon img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .icon__section {
     grid-template-columns: repeat(6, 1fr);
