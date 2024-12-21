@@ -170,7 +170,7 @@ nav.nav__expanded .nav__list {
   }
 }
 
-/*Hamburger*/
+/**============Hamburger================*/
 
 .nav__toggler {
   cursor: pointer;
@@ -201,6 +201,8 @@ nav.nav__expanded .nav__list {
 }
 
 /**============Buttons================*/
+
+/*? 3D buttons*/
 
 .button__container {
   height: 100%;
@@ -391,4 +393,43 @@ nav.nav__expanded .nav__list {
 
 .button:hover .button__triangle {
   transform: rotate(-12deg) scale(1.1);
+}
+
+/*? normal buttons*/
+
+.btn {
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  padding: 2rem 2.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 1.4rem;
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn--secondary {
+  background-color: var(--color-secondary-dark);
+  color: var(--color-white);
+}
+
+.btn--block {
+  width: 100%;
+  font-size: 1.6rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .btn {
+    font-size: 1.6rem;
+  }
+
+  main .btn--block {
+    font-size: 2rem;
+  }
 }
