@@ -444,6 +444,7 @@ nav.nav__expanded .nav__list {
   justify-content: center;
   grid-template-columns: 1fr;
   margin-top: 3rem;
+  margin-bottom: 15rem;
   position: relative;
   width: 100%;
   height: 478px;
